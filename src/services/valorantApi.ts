@@ -86,13 +86,13 @@ instance.interceptors.response.use(
   }
 );
 
-export default async function ValorantApi(url: string) {
+export default async function ValorantApi(url: string, language: string = 'en-US') {
   const config = {
     headers: {
       ...instanceHeader,
     },
     params: {
-      language: 'pt-BR'
+      language
     }
   };
 

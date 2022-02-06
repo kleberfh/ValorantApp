@@ -6,6 +6,9 @@ import map from '../assets/map.png';
 import home from '../assets/home.png';
 import ranks from '../assets/ranks.png';
 import agents from '../assets/agents.png';
+import {useRecoilValue} from "recoil";
+import {languageAtom} from "../atoms/languageAtom";
+import {localization} from "../lang/localization";
 
 const images = {
   weapons: gun,
@@ -17,6 +20,8 @@ const images = {
 
 export default function NavBar({ state, navigation }) {
   const { routes } = state;
+
+  const language = useRecoilValue(languageAtom);
 
   const onPress = (route, index) => {
     const event = navigation.emit({
@@ -61,7 +66,7 @@ export default function NavBar({ state, navigation }) {
             fontWeight="semibold"
             color={colors.light.primary}
           >
-            {route.name}
+            {localization[language].menu[route.name]}
           </Text>
         </Pressable>
       ))}
