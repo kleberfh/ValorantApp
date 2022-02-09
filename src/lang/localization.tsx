@@ -20,6 +20,9 @@ export const localization = {
     agent: {
       abilities: 'Abilities',
       voice: 'Voice'
+    },
+    weapons: {
+      title: 'Weapons'
     }
   },
   'pt-BR': {
@@ -43,6 +46,9 @@ export const localization = {
     agent: {
       abilities: 'Habilidades',
       voice: 'Voz'
+    },
+    weapons: {
+      title: 'Armas'
     }
   }
 }

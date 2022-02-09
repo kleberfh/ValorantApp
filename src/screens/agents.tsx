@@ -10,7 +10,7 @@ import ValorantApi from "../services/valorantApi";
 import {languageAtom} from "../atoms/languageAtom";
 import AgentCard from "../components/Agents/AgentCard";
 import CircleSnail from "../components/Global/Loading";
-import {FlatList, Flex, Center, Text, Input, Pressable, Avatar} from "native-base";
+import {FlatList, Flex, Center, Text, Pressable, Avatar} from "native-base";
 import {TextInput} from "react-native";
 
 export default function Agents() {

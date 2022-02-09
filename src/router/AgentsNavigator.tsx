@@ -4,7 +4,6 @@ import {useRecoilValue} from "recoil";
 import Agents from "../screens/agents";
 import {colors} from "../utilities/theme";
 import {themeAtom} from "../atoms/themeAtom";
-import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();

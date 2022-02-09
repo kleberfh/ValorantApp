@@ -1,5 +1,6 @@
-import {Flex, Image, Pressable, Text} from "native-base";
+import {useState} from "react";
 import {colors} from "../utilities/theme";
+import {Flex, Image, Pressable, Text} from "native-base";
 
 import gun from '../assets/gun.png';
 import map from '../assets/map.png';
@@ -20,6 +21,7 @@ const images = {
 
 export default function NavBar({ state, navigation }) {
   const { routes } = state;
+  const [currentRoute, setCurrentRoute] = useState('home');
 
   const language = useRecoilValue(languageAtom);
 
@@ -32,6 +34,7 @@ export default function NavBar({ state, navigation }) {
     const isFocused = state.index === index;
 
     if (!isFocused && !event.defaultPrevented) {
+      setCurrentRoute(route.name);
       navigation.navigate(route.name);
     }
   };
@@ -64,7 +67,7 @@ export default function NavBar({ state, navigation }) {
             fontSize="sm"
             textAlign="center"
             fontWeight="semibold"
-            color={colors.light.primary}
+            color={currentRoute === route.name ? colors.light.background : colors.light.primary}
           >
             {localization[language].menu[route.name]}
           </Text>
